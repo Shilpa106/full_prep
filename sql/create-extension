@@ -1,0 +1,13 @@
+-- create table pets(id int,name varchar(27),breed varchar(28),gender varchar(20));
+-- insert into pets(id,name,breed,gender)values(11441,'Tommy','German Shepherd',	'Male'),(11442,'Max','Beagle','Male'),(11443,'Charlie','Pug','Male'),(11444,'Daisy','Poodle','Female'),(11445,'Zoe','Labrador','Female'),(11446,'Toby','Bulldog','Male');
+-- select * from pets;
+
+/*create extension table*/
+
+-- -- QUERY1
+-- create table newTable LIKE pets;
+-- select * from newTable where newTable.Gender='Female';
+
+-- -- QUERY2
+CREATE TABLE newTable as (SELECT * FROM pets WHERE pets.BREED='German Shepherd');
+SELECT * FROM newTable;

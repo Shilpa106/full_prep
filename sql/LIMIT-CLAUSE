@@ -1,0 +1,11 @@
+-- CREATE TABLE STUDENT2(RollNO INT, Name varchar(25),Grade int)
+-- insert into student2(RollNo,Name,Grade)values(12001,'Aditya',9),(12002,'Sahil',6),(12003,'Hema',8),(12004,'Robin',9),(12005,'Sita',7),(12006,'Anne',10),(12007,'Yusuf',7),(12008,'Alex',5);
+-- select * from student2;
+-- select * from student2 LIMIT 5;
+
+-- SELECT * FROM STUDENT2 ORDER BY GRADE DESC LIMIT 3;
+-- SELECT * FROM STUDENT2 ORDER BY RollNo LIMIT 5 OFFSET 2;
+
+-- SELECT * FROM STUDENT2 LIMIT ALL;
+
+

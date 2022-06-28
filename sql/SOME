@@ -1,0 +1,18 @@
+-- select * from instructor;
+--  create table instructor2 as (select * from employee);
+-- select * from instructor2;
+--  alter table instructor2 add column Dept varchar(20);
+
+-- update instructor2 set dept='CB' WHERE EMPLOYEEID=100845;
+
+-- SELECT NAME FROM INSTRUCTOR2 WHERE SALARY>SOME(SELECT SALARY FROM INSTRUCTOR2 WHERE DEPT='CSE');
+-- select * from instructor2 offset 2;
+-- select * from instructor2 order by salary offset 2;
+-- select * from instructor2 order by salary offset 2 rows;
+
+-- select * from instructor2 order by salary offset 2 rows fetch next 2 rows only;
+
+/*
+SELECT * FROM INSTRUCTOR2 ORDER BY SALARY OFFSET (SELECT COUNT(*) FROM INSTRUCTOR2)
+FETCH NEXT 2 ROWS;
+*/

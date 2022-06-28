@@ -1,0 +1,18 @@
+--  select * from employee;
+
+-- insert into employee11 (employee_id,first_name,salary,hire_date,last_name,dept_id,gender) values (110,'Aman',20000,'2011-02-10','PANDEY',10,'male');
+-- DELETE FROM employee11 WHERE employee_id=100 
+
+select * from employee11 ;
+--  update employee11 set first_name='Anamika' where first_name='Aman'
+-- select last_name,gender,salary,COUNT(GENDER) from employee11 group by salary,gender,last_name
+--    select ROW_NUMBER() OVER ( ORDER BY first_name ) row_num,first_name,last_name,salary,gender,COUNT(GENDER) OVER(PARTITION BY salary) AS TOTALGENDER FROM EMPLOYEE11;
+
+--  select first_name,last_name,salary,gender,COUNT(GENDER) OVER(PARTITION BY GENDER) AS TOTALGENDER FROM EMPLOYEE11;
+-- select gender,COUNT(GENDER) AS TOTALGENDER FROM EMPLOYEE11 GROUP BY GENDER ;
+-- select first_name,last_name,salary,gender,SUM(SALARY) OVER(PARTITION BY SALARY) AS TOTALSALARY FROM EMPLOYEE11;
+
+
+-- SELECT ROW_NUMBER() OVER ( ORDER BY first_name ) row_num, first_name, last_name FROM employee11;
+
+

@@ -1,0 +1,22 @@
+-- create table Employee1(id int, name varchar(20),age int, city varchar(29));
+-- insert into Employee1(id,name,age,city) values('1','suresh','24','delhi'),('2','ramesh','23','pune'),('3','kashish','34','agra');
+-- select * from Employee1;
+
+-- create table employee2(bonus_id int,emp_id int,bonus int);
+-- insert into employee2(bonus_id,emp_id,bonus) values('43','1','20000'),('45','3','30000');
+-- select * from employee2;
+
+-- intersect--
+/* select id,name,bonus from employee1 left join employee2 on employee1.id=employee2.emp_id
+ intersect
+ select id,name,bonus from employee1 right join employee2 on employee1.id=employee2.emp_id;
+*/
+
+--except clause--
+/*
+select id,name, bonus from employee1 left join employee2 on employee1.id=employee2.emp_id 
+except
+select id,name,bonus from employee1 right join employee2 on employee1.id=employee2.emp_id;
+*/
+
+

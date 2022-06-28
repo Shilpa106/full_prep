@@ -1,0 +1,16 @@
+-- select * from newTable;
+-- ALTER TABLE newTable RENAME TO PET;
+-- SELECT * FROM PET;
+-- ALTER TABLE PET RENAME COLUMN GENDER TO GENDERS;
+-- SELECT * FROM PET;
+-- ALTER TABLE PET RENAME COLUMN GENDERS TO GENDER;
+
+-- SELECT * FROM PET;
+
+
+--  alter table pet add course varchar(40);
+-- ALTER TABLE PET MODIFY COURSE int;
+-- select * from pet;
+-- alter table pet MODIFY course varchar(20);
+
+-- ALTER TABLE PET DROP COLUMN COURSE;

@@ -1,0 +1,1 @@
+# Python – Length of shortest string in string list

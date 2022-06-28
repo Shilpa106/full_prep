@@ -1,0 +1,6 @@
+<!-- Input : s1 = "hello"
+        s2 = "geeksforgeeks"
+Output : s2 = "hello" -->
+
+def copy_str(x, y):
+

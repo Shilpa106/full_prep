@@ -1,0 +1,38 @@
+-- create table product_list(p_id int, p_name char(20),p_price int);
+-- insert into product_list(p_id,p_name,p_price) values('101','tea','10'),('102','cofee','15'),('103','biscuit','20');
+-- create table updated_list(p_id int,p_name char(20),p_price int)
+-- insert into updated_list(p_id,p_name,p_price) values('101','tea','10'),('102','cofee','25'),('104','chips','22');
+
+/* selecting the target and the source */
+
+ MERGE PRODUCT_LIST AS TARGET 
+     USING UPDATE_LIST AS SOURCE
+	 
+	 /*1.Performing the UPDATE operation */
+	 
+	 /* if the P_ID is same,check for change in P_NAME or P_PRICE */
+	 ON (TARGET.P_ID=SOURCE.P_ID)
+	 WHEN MATCHED
+	    AND TARGET.P_NAME <> SOURCE.P_NAME
+		OR TARGET.P_PRICE <> SOURCE.P_PRICE
+		
+	/*1. Update the records in TARGET*/
+	THEN UPDATE
+	    SET TARGET.P_NAME=SOURCE.P_NAME,
+		TARGET.P_PRICE=SOURCE.P_PRICE
+		
+	/*2. Performing the INSERT operation */
+	
+	/* When no records are matched with TARGET TABLE Then insert ther records in the target table */
+	WHEN NOT MATCHED BY TARGET
+	 THEN INSERT (P_ID,P_NAME,P_PRICE)
+	      VALUES(SOURCE.P_ID,SOURCE.P_NAME,SOURCE.P_PRICE)
+		  
+		  
+	/*3. Performing the DELETE Operation */
+	/* When no records are matched with SOURCE table 
+	Then delete the records from the target table */
+	WHEN NOT MATCHED BY SOURCE
+	THEN DELETE
+	
+	/* END OF MERGE */

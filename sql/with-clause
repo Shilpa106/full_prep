@@ -1,0 +1,50 @@
+-- create table Pilot(EmployeeID int, Airline varchar(20),Name varchar(20),Salary int);
+-- insert into Pilot(EmployeeID,Airline,Name,Salary) values('70007','Airbus 380','Kim','60000'),('70002','Boeing','Laura',	'20000'),('10027','Airbus 380',	'Will',	'80050'),('10778',	'Airbus 380',	'Warren',	'80780'),('115585'	,'Boeing',	'Smith',	'25000'),('114070'	,'Airbus 380'	,'Katy'	,'78000');
+-- select * from Pilot;
+-- WITH totalSalary(Airline,total) as (SELECT Airline,sum(Salary) from Pilot group by airline),
+-- airlineAverage(avgSalary) as (SELECT avg(Salary) from Pilot)
+-- select airline from totalSalary,airlineAverage where totalSalary.total>airlineAverage.avgSalary;
+-- select * from Employee order by salary desc fetch first 3 rows only;
+
+-- select * from Pilot order by salary desc fetch first 3 rows With Ties;
+-- select employeeid,airline,name,salary,salary+100 as "salary+100" from Pilot;
+-- select employeeid,airline,name,salary,salary+employeeid as "salary+employeeid" from Pilot;
+
+-- select employeeid, airline,name,salary,salary-100 as "salary-100" from Pilot;
+
+-- select employeeid,airline,name,salary,salary-employeeid as "salary-employeeid" from Pilot;
+
+-- select employeeid,airline,name,salary,salary*100 as "salary*100" from Pilot;
+-- select employeeid,airline,name,salary,salary*employeeid as "salary*employeeid" from Pilot;
+-- select employeeid,airline,name,salary,salary%25000 as "salary%25000" from Pilot;
+
+-- select employeeid,airline,name,salary,salary%employeeid as "salary%employeeid" from Pilot;
+-- alter table Pilot ADD types int;
+-- select * from Pilot;
+-- select employeeid,airline,name,salary,types,types+100 as "types+100" from Pilot;
+-- select * from Pilot where airline like '%0';
+-- select * from Pilot where airline like 'Boein_';
+-- select * from Pilot;
+
+-- select * from Pilot where name like '%[a-c]%'; --checkk
+-- select * from Pilot where name like '%[^a-c]%'; --check
+
+-- alter table Pilot add phone varchar(20);
+-- update Pilot set phone='9834783785'; 
+-- select * from Pilot where phone like '9__4%';
+
+-- ALTER TABLE Pilot RENAME COLUMN type TO Address;
+--  select * from Pilot;
+-- update Pilot set address='new ashok' where employeeid>3;
+-- update pilot set address='luckno' where employeeid<=70002;
+
+-- select * from Pilot where address like '______';
+
+-- select distinct * from Pilot where address like '%ck%';
+
+
+
+
+
+
+

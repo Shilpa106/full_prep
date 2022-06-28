@@ -1,0 +1,25 @@
+-- select * from supplier;
+-- create table products as (select * from supplier)
+-- select * from products;
+-- select all name from products where true;
+
+
+--  select * from student;
+
+-- create table STUDENTCOURSE(COURSE_ID INT, ROLL_NO INT);
+-- INSERT INTO STUDENTCOURSE (ROLL_NO) SELECT ROLL_NO FROM STUDENT;
+-- SELECT * FROM STUDENTCOURSE;
+-- UPDATE STUDENTCOURSE SET COURSE_ID=3 WHERE ROLL_NO=3
+
+-- SELECT STUDENT.NAME,STUDENT.AGE,STUDENTCOURSE.COURSE_ID FROM STUDENT CROSS JOIN STUDENTCOURSE;
+
+
+
+
+/* SELF JOIN */
+
+-- SELECT * FROM STUDENT;
+--  SELECT a.ROLL_NO FROM STUDENT a;
+-- SELECT b.ROLL_NO FROM STUDENT b;
+-- SELECT a.ROLL_NO, b.ROLL_NO FROM STUDENT a,STUDENT b;
+SELECT a.ROLL_NO,b.NAME FROM STUDENT a, STUDENT b WHERE a.ROLL_NO<B.ROLL_NO;
