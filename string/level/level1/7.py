@@ -123,5 +123,3 @@ if __name__ == '__main__':
 
 	# Function Call
 	print(encryptString(S, N))
-
-# This code is contributed by mohit kumar 29
