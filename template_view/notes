@@ -1,0 +1,61 @@
+Template view
+django.views.generic.base.TemplateView
+It renders a given template, with the context containing parameters captured in the URL
+This view inherits methods and attributes from the following views
+django.views.generic.base.TemplateResponseMixin
+django.views.generic.base.ContextMixin
+django.views.generic.base.View
+
+class TemplateView(TemplateResponseMixin,ContextMixin,View):
+
+TemplateResponseMixin:
+It provides a mechanism to construct a TemplateResponse, given suitable context. The template to use is configurable and 
+can be further customized by subclasses.
+
+Attributes:
+template_name:The full name of a template to use a defined by a string. Not defining a template_name will raise a django.core.
+exceptions.ImproperlyConfigured exception.
+
+template_engine: The name of a template engine to use for loading the template. template_engine is passed as the using keyword argument to response_class.Default is None which tells django to search for the template in all configured engines.
+
+response_class:The response class to be returned by render_to_response method. Default is TemplateResponse.The template and context of TemplateResponse instances can be altered later(eg in template response middleware).
+
+if you need custom template loading or custom context object instantiation, create a TemplateResponse subclass and assign it to response_class.
+
+content_type:The content type to use for the response.content_type is passed as a keyword argument to response_class. Default is None -meaning the Django uses'text/html'.
+
+Methods:
+render_to_response(context,**response_kwargs)-It returns a self.response_class instance.
+If any keyword arguments are provided, they will be passed to the constructor of the response class.
+Calls get_templates_names() to obtain the list of templates names that will be searched looking for an existent template.
+
+get_template_names()-It returns a list of templates names to search for when rendering the template.
+The first template that is found will be used.
+
+If template_name is specified, the default implementation will return a list containing template_name(if ite is specified)
+
+
+ContextMixin::::::::::::;
+A default context mixin that passes the keyword arg received by get_context_data() as the template context.
+
+Attributes:
+extra_context:A dictionary to include in the context.This is a convenient way of specifying some context in as_view().
+
+
+Methods:
+get_context_data(**kwargs):It returns a dictionary representing the template context. The keyword arguments provided will make up the returned context.
+
+
+
+Views.py
+from django.views.generic.base import TemplateView
+class HomeView(TemplateView):
+  template_name='school/home.html'
+
+
+
+urls.py
+from school import views
+urlpatterns=[path('home/',views.HomeView.as_view(),name='home')
+
+
